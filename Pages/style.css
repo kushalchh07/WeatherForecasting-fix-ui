@@ -1,0 +1,133 @@
+/* Existing CSS */
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #87CEEB, #f0f0f0); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%; /* Responsive width */
+    max-width: 800px; /* Maximum width for better readability */
+    animation: fadeIn 0.5s ease; /* Fade-in animation */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1; /* Flexible width */
+    padding: 12px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF; /* Highlight on focus */
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    background: #007BFF;
+    color: white;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3; /* Darker background on hover */
+}
+
+.weather-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid layout */
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9; /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weather-info p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.hourly-forecast {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.forecast-item {
+    background: #f9f9f9; /* Light background */
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.forecast-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.forecast-item img {
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Adjusted padding for smaller screens */
+    }
+
+    .weather-info, .hourly-forecast {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Further adjusted padding for very small screens */
+    }
+
+    .weather-info, .hourly-forecast {
+        grid-template-columns: 1fr; /* Single column layout on mobile */
+    }
+}
